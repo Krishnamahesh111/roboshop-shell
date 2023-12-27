@@ -20,7 +20,7 @@ VALIDATE(){
     fi
 }
 
-if [ $1 -ne 0 ]
+if [ $? -ne 0 ]
 then
     echo -e "$R ERROR:: Please run this scrpit with root acces $N"
     exit 1 # you can give other than 0

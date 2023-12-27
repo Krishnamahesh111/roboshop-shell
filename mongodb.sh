@@ -36,11 +36,11 @@ dnf install mongodb-org -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB"
 
-systemctl enable MangoDB
+systemctl enable mongod &>> $LOGFILE
 
 VALIDATE $? "Enabling MongoDB"
 
-systemctl start mongod
+systemctl start mongod &>> $LOGFILE
 
 VALIDATE $? "Starting MongoDB"
 

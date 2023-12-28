@@ -78,13 +78,13 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "catalouge daemon reload"
 
-systemctl enable catalouge &>> $LOGFILE
+systemctl enable catalogue &>> $LOGFILE
 
-VALIDATE $? "Enable catalouge"
+VALIDATE $? "Enable catalogue"
 
-systemctl start catalouge &>> $LOGFILE
+systemctl start catalogue &>> $LOGFILE
 
-VALIDATE $? "Starting catalouge"
+VALIDATE $? "Starting catalogue"
 
 cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
 
@@ -94,7 +94,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB client"
 
-mongo --host $MNGODB_HOST </app/schema/catalouge.js &>> $LOGFILE
+mongo --host $MONGODB_HOST </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "Loading catalouge data into MongoDB"
 

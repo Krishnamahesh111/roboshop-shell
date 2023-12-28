@@ -50,7 +50,7 @@ curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>> $LOGFI
 
 VALIDATE $? "Downloaded web application"
 
-cd /user/share/nginx/html &>> $LOGFILE
+cd /usr/share/nginx/html &>> $LOGFILE
 
 VALIDATE $? "moving nginx html directory"
 

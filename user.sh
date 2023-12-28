@@ -43,7 +43,7 @@ dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "Installing NodeJS:18"
 
 id roboshop
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     useradd roboshop
     VALIDATE $? "roboshop user creation"
@@ -93,6 +93,6 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB client"
 
-mongo --host $MNGODB_HOST </app/schema/user.js &>> $LOGFILE
+mongo --host mongodb.daws76s.website </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? "Loading user data into MongoDB"

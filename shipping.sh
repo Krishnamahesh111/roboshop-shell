@@ -32,7 +32,7 @@ fi
 dnf install maven -y &>> $LOGFILE
 
 id roboshop
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     useradd roboshop
     VALIDATE $? "roboshop user creation"

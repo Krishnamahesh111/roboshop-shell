@@ -42,7 +42,7 @@ dnf install nodejs -y &>> $LOGFILE
 VALIDATE $? "Installing NodeJS:18"
 
 id roboshop
-if [$? -ne 0]
+if [ $? -ne 0 ]
 then
     useradd roboshop
     VALIDATE $? "roboshop user creation"
@@ -81,6 +81,6 @@ systemctl enable cart &>> $LOGFILE
 
 VALIDATE $? "Enable cart"
 
-systemctl start cart &>> $LOGFILE
+systemctl restart cart &>> $LOGFILE
 
 VALIDATE $? "Starting cart"

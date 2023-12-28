@@ -96,4 +96,3 @@ VALIDATE $? "Installing MongoDB client"
 mongo --host $MNGODB_HOST </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? "Loading user data into MongoDB"
-

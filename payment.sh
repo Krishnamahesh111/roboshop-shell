@@ -33,7 +33,7 @@ fi
 dnf install python36 gcc python3-devel -y &>> $LOGFILE
 
 id roboshop
-if [ $? -ne 0]
+if [ $? -ne 0 ]
 then
     useradd roboshop
     VALIDATE $? "roboshop user creation"

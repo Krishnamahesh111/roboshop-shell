@@ -33,7 +33,7 @@ fi
 dnf install python36 gcc python3-devel -y &>> $LOGFILE
 
 id roboshop
-if [$? -ne 0]
+if [ $? -ne 0]
 then
     useradd roboshop
     VALIDATE $? "roboshop user creation"
@@ -53,11 +53,11 @@ cd /app
 
 unzip -o /tmp/payment.zip &>> $LOGFILE
 
-VALIDATE $? "unzipping payments"
+VALIDATE $? "unzipping payment"
 
 pip3.6 install -r requirements.txt &>> $LOGFILE
 
-VALIDATE $? "Installing payments"
+VALIDATE $? "Installing Dependencies"
 
 cp /home/centos/roboshop-shell/payment.service /etc/systemd/system/payment.service &>> $LOGFILE
 
@@ -69,7 +69,7 @@ VALIDATE $? "deamon reload"
 
 systemctl enable payment &>> $LOGFILE
 
-VALIDATE $? "enavle payment"
+VALIDATE $? "Enable payment"
 
 systemctl start payment &>> $LOGFILE
 

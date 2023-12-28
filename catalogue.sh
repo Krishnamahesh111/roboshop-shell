@@ -5,7 +5,6 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-MONGODB_HOST=mongodb.daws.website
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE=/tmp/"$0-$TIMESTAMP.log"
@@ -94,7 +93,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Installing MongoDB client"
 
-mongo --host mongodb.daws.website </app/schema/catalogue.js &>> $LOGFILE
+mongo --host mongodb.daws76s.website </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "Loading catalogue data into MongoDB"
 

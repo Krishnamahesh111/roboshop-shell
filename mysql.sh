@@ -36,7 +36,7 @@ VALIDATE $? "Disable current MySQL version"
 
 cp mysql.repo /etc/yum.repos.d/mysql.d/mysql.repo &>> $LOGFILE
 
-VALIDATE $? "Copied MySQL repo"
+VALIDATE $? "Copied MySQl repo"
 
 dnf install mysql-community-server -y &>> $LOGFILE
 

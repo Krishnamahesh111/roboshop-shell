@@ -42,7 +42,7 @@ systemctl start nginx &>> $LOGFILE
 
 VALIDATE $? "Starting Nginx"
 
-rm -rf /user/share/nginx/html/* &>> $LOGFILE
+rm -rf /usr/share/nginx/html/* &>> $LOGFILE
 
 VALIDATE $? "remove default website"
 
